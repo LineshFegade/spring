@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.2.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.2.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+
+
+<bean id="pro1" class="com.spring.model.Profile">
+<property name="profileId" value="111"></property>
+<property name="creationDate" value="2020-12-09"></property>
+<property name="perInfo" ref="pinfo1"></property>
+<property name="eduInfo" ref="einfo1"></property>
+</bean>
+<!-- Setter Injection -->
+<bean id="addr1" class="com.spring.model.Address">
+<property name="street" value="pawan Nager"></property>
+<property name="city" value="kalyan"></property>
+<property name="countery" value="India"></property>
+<property name="zip" value="421503"></property>
+</bean>
+
+<bean id="pinfo1" class="com.spring.model.PersonalDetails">
+<property name="firstName" value="Akash"></property>
+<property name="lastName" value="Patil"></property>
+<property name="email" value="akashpatil@gmail.com"></property>
+<property name="contactNo" value="9267852310"></property>
+<property name="gender" value="Male"></property>
+<property name="birthDate" value="1997-12-10"></property>
+<property name="resAddress" ref="addr1"></property>
+</bean>
+
+<bean id="einfo1" class="com.spring.model.EducationalDetails">
+<property name="Qualification" value="B.TECH"></property>
+<property name="result" value="70%"></property>
+<property name="yearPassing" value="2019"></property>
+</bean>
+</beans>
